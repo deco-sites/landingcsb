@@ -50,3 +50,23 @@
     display: none;
   }
 }
+
+.table-zebra thead{
+  background-color: #F1EEEE;
+}
+
+.table-zebra tr:nth-child(odd){
+  background-color: #FFFFFF;
+}
+
+.table-zebra tr:nth-child(even){
+  background-color: #F1EEEE;
+}
+
+.table-zebra input:nth-child(odd){
+  background-color: #F1EEEE;
+}
+
+.table-zebra input:nth-child(even){
+  background-color: #FFFFFF;
+}
