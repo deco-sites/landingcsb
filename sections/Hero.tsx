@@ -1,6 +1,7 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Table from "site/components/ui/Table/Table.tsx";
+import TableIsland from "site/islands/TableIsland.tsx";
 
 export interface CTA {
   id?: string;
@@ -59,7 +60,7 @@ export default function HeroFlats({
         menor:
       </span>
 
-      <Table />
+      <TableIsland />
 
       <span>
         A disponibilidade dos temas é limitada, com cerca de 1000 kits cada.
