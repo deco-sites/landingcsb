@@ -51,21 +51,26 @@ const Ordenator = ({
 }: IOrdenatorProps) => {
   const buttonStyle = `h-3 w-4`;
   return (
-    <div className="flex flex-col">
-      <button
-        disabled={isBlockedUp}
-        onClick={increaseFunction}
-        className={buttonStyle}
-      >
-        +
-      </button>
-      <button
-        disabled={isBlockedDown}
-        onClick={deacreaseFunction}
-        className={buttonStyle}
-      >
-        -
-      </button>
+    <div className="flex flex-col gap-2">
+      {isBlockedUp ? <span></span> : (
+        <button
+          disabled={isBlockedUp}
+          onClick={increaseFunction}
+          className={buttonStyle}
+        >
+          <img src="./arrow-up.png" alt="icon" />
+        </button>
+      )}
+
+      {isBlockedDown ? <span></span> : (
+        <button
+          disabled={isBlockedDown}
+          onClick={deacreaseFunction}
+          className={buttonStyle}
+        >
+          <img src="./arrow-down.png" alt="icon" />
+        </button>
+      )}
     </div>
   );
 };
@@ -84,7 +89,7 @@ export default function TableIsland() {
         <tbody>
           {themes.value.map((theme, index) => (
             <tr key={theme.id}>
-              <th>
+              <th className="flex items-center justify-center">
                 <div>{index + 1}</div>
                 <Ordenator
                   deacreaseFunction={() =>
