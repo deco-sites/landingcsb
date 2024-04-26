@@ -1,4 +1,5 @@
 import { signal } from "@preact/signals";
+import { Picture, Source } from "apps/website/components/Picture.tsx";
 
 const themes = signal([
   { id: 1, theme: "Aviação", icon: "./flight.png" },
@@ -58,7 +59,15 @@ const Ordenator = ({
           onClick={increaseFunction}
           className={buttonStyle}
         >
-          <img src="./arrow-up.png" alt="icon" />
+          {/*<img src="./arrow-up.png" alt="icon" />*/}
+          <Picture>
+            <Source
+              media="(max-width: 768px)"
+              src="./arrow-up.png"
+              width={270}
+              height={377}
+            />
+          </Picture>
         </button>
       )}
 
@@ -68,7 +77,15 @@ const Ordenator = ({
           onClick={deacreaseFunction}
           className={buttonStyle}
         >
-          <img src="./arrow-down.png" alt="icon" />
+          {/*<img src="./arrow-down.png" alt="icon" />*/}
+          <Picture>
+            <Source
+              media="(max-width: 768px)"
+              src="./arrow-down.png"
+              width={270}
+              height={377}
+            />
+          </Picture>
         </button>
       )}
     </div>
