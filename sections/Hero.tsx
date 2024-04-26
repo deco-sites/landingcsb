@@ -42,14 +42,13 @@ export default function HeroFlats({
   ],
 }: Props) {
   return (
-    <div className="bg-[#04132C] text-white h-screen w-full flex flex-col items-center gap-4 justify-center p-4 text-center">
+    <div className="bg-[#04132C] text-white h-full w-full flex flex-col items-center gap-4 justify-center p-4 text-center">
       <Image
         src="/image/logo-csb.png"
         width={100}
         preload
         loading="eager"
         fetchPriority="high"
-        class="object-cover h-full w-full"
       />
       <span>Prezado(a) (NOME DO PROFESSOR),</span>
       <span>

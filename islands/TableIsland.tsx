@@ -1,13 +1,14 @@
 import { signal } from "@preact/signals";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
+import Image from "apps/website/components/Image.tsx";
 
 const themes = signal([
-  { id: 1, theme: "Aviação", icon: "./flight.png" },
-  { id: 2, theme: "Cidades Inteligentes", icon: "./smart-city.png" },
-  { id: 3, theme: "Robótica", icon: "./robot.png" },
-  { id: 4, theme: "Exploração Espacial", icon: "./rocket.png" },
-  { id: 5, theme: "Oceanos e meio-ambiente", icon: "./ocean.png" },
-  { id: 6, theme: "Comunicação e Storytelling", icon: "./talk.png" },
+  { id: 1, theme: "Aviação", icon: "/image/flight.png" },
+  { id: 2, theme: "Cidades Inteligentes", icon: "/image/smart-city.png" },
+  { id: 3, theme: "Robótica", icon: "/image/robot.png" },
+  { id: 4, theme: "Exploração Espacial", icon: "/image/rocket.png" },
+  { id: 5, theme: "Oceanos e meio-ambiente", icon: "/image/ocean.png" },
+  { id: 6, theme: "Comunicação e Storytelling", icon: "/image/talk.png" },
 ]);
 
 interface IThemes {
@@ -63,7 +64,7 @@ const Ordenator = ({
           <Picture>
             <Source
               media="(max-width: 768px)"
-              src="./arrow-up.png"
+              src="/image/arrow-up.png"
               width={270}
               height={377}
             />
@@ -81,7 +82,7 @@ const Ordenator = ({
           <Picture>
             <Source
               media="(max-width: 768px)"
-              src="./arrow-down.png"
+              src="/image/arrow-down.png"
               width={270}
               height={377}
             />
@@ -119,7 +120,14 @@ export default function TableIsland() {
               </th>
               <td>{theme.theme}</td>
               <td>
-                <img src={theme.icon} alt="icon" />
+                {/*<img src={theme.icon} alt="icon" />*/}
+                <Image
+                  src={theme.icon}
+                  width={100}
+                  preload
+                  loading="eager"
+                  fetchPriority="high"
+                />
               </td>
             </tr>
           ))}
